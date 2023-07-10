@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     unauthenticated { root to: "devise/sessions#new", as: :unauthenticated_root }
 
     resource :profile, only: [:edit, :update], controller: :profile
+    resources :passwords, only: [:update]
 
     authenticate :user, -> (user) { user.maintainer? } do
       draw :maintenance
