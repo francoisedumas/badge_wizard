@@ -1,0 +1,8 @@
+= turbo_frame_tag "badge-form" do
+  . data-navigation-target="form"
+    = simple_form_for :badge, url: badges_path do |f|
+      = render FormComponent.new do |c|
+        = f.input :prompt, placeholder: "Enter a prompt", class: "text-input"
+
+        - c.with_action do
+          = f.submit t("generate"), class: "btn btn-primary"

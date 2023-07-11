@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     resource :profile, only: [:edit, :update], controller: :profile
     resources :passwords, only: [:update]
+    resources :badges, only: [:new, :create, :show]
 
     authenticate :user, -> (user) { user.maintainer? } do
       draw :maintenance
@@ -17,5 +18,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root "profile#edit"
+  root "badges#new"
 end

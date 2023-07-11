@@ -1,8 +1,0 @@
-#flash-alerts.fixed.left-0.bottom-0.flex.flex-col.items-start.space-y-2.px-4.py-6.sm:p-6.z-20
-  h1 Hello, world!
-  - if notice
-    = render ToastComponent.new(variant: :success, auto_dismiss: true) do
-      = sanitize notice
-  - if alert
-    = render ToastComponent.new(variant: :warning, auto_dismiss: true) do
-      = sanitize alert

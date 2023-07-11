@@ -1,6 +1,7 @@
 fr:
   cancel: Annuler
   edit: Modifier
+  generate: Générer
   save: Enregistrer
   update_done: Modifié avec succès
   update_error: La modification n'a pas pu être effectuée
