@@ -12,6 +12,9 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :prompts, dependent: :destroy
+  has_many :generated_images, through: :prompts
+
   def full_name
     "#{first_name&.capitalize} #{last_name&.upcase}".strip.presence || email.match(/^[^@]+/).to_s.capitalize
   end

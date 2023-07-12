@@ -10,3 +10,5 @@ fr:
         full_name: Nom complet
         last_name: Nom
         role_text: Rôle
+        created_at: "Créé le"
+        updated_at: "Dernière modification"

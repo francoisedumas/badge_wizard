@@ -60,6 +60,7 @@ gem "devise"
 gem "devise-i18n"
 gem "devise_invitable"
 gem "view_component"
+gem "image_processing", "~> 1.2"
 
 # Temporary for demonstration
 gem 'unsplash'

@@ -6,3 +6,4 @@ fr:
     first_name: Alice
     last_name: Martin
     new_password: Nouveau mot de passe
+    new_prompt: Entrez la description de votre badge

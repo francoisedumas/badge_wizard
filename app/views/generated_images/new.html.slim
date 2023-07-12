@@ -1,0 +1,10 @@
+- content_for :title do
+  = t(".new_template")
+
+. data-controller="navigation" data-action="turbo:before-fetch-request@document->navigation#displayLoading"
+  = turbo_frame_tag Prompt.new do
+    = render "form"
+  = turbo_frame_tag "image_generation_pulse" do
+    .hidden.flex.justify-center data-navigation-target="loading"
+      = render "pulse"
+  = turbo_frame_tag "generated_images"
