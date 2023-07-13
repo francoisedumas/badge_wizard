@@ -1,0 +1,7 @@
+en:
+  enumerize:
+    user:
+      role:
+        maintainer: Mainteneur
+        admin: Admin
+        default: Standard

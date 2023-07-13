@@ -1,0 +1,8 @@
+en:
+  generated_images:
+    new:
+      new_template: Generate new templates
+    prompt:
+      new_prompt: Start a new prompt
+    index:
+      collection: List of generated images

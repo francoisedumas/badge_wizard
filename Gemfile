@@ -50,6 +50,7 @@ end
 
 group :development, :test do
   gem "rubocop-rails", require: false
+  gem "i18n-tasks", "~> 1.0.12"
 end
 
 gem "slim-rails"

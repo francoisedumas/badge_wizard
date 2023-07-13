@@ -12,6 +12,7 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one_attached :photo
   has_many :prompts, dependent: :destroy
   has_many :generated_images, through: :prompts
 

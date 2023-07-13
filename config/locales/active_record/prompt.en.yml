@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      prompt: Prompt
+    attributes:
+      prompt:
+        description: Description
+        created_at: Created at
+        updated_at: Last modification

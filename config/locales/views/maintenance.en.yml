@@ -1,0 +1,18 @@
+en:
+  maintenance:
+    base:
+      index:
+        title: Maintenance
+    users:
+      index:
+        new: Add a user
+        title: Users
+      new:
+        title: New user
+      edit:
+        title: Modify user
+      form:
+        invite: submit invitation
+    jobs:
+      index:
+        title: Jobs

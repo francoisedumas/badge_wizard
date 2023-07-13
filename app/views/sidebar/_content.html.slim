@@ -6,7 +6,8 @@
   = link_to edit_profile_path, class: "flex-shrink-0 group block" do
     .flex.items-center
       div
-        = image_tag "profile.webp", class: "inline-block h-9 w-9 rounded-full", alt: "profile"
+        = rounded_image(current_user.photo, 40)
+        / = image_tag "profile.webp", class: "inline-block h-9 w-9 rounded-full", alt: "profile"
       .ml-3
         p.text-sm.font-medium.text-white = current_user.full_name
         p.text-xs.font-medium.text-indigo-200.group-hover:text-white = t(".view_profile")

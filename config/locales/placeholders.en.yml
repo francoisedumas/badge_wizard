@@ -1,0 +1,9 @@
+fr:
+  placeholders:
+    confirm_new_password: Confirm your new password
+    current_password: Current password
+    email: alice.martin@example.com
+    first_name: Alice
+    last_name: Martin
+    new_password: New password
+    new_prompt: Enter the badge description
