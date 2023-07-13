@@ -3,6 +3,11 @@
 require "open-uri"
 
 class GeneratedImagesController < ApplicationController
+
+  def index
+    @generated_images = Current.user.generated_images.includes(:prompt)
+  end
+
   def new
     @prompt = Prompt.new
   end
@@ -32,6 +37,8 @@ class GeneratedImagesController < ApplicationController
   end
 
   def attached_images_to_prompt(image_urls)
+    return if image_urls.empty?
+
     image_urls.each_with_index do |image_url, index|
       file = URI.parse(image_url).open
       generated_image = @prompt.generated_images.build

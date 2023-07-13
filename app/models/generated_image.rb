@@ -6,4 +6,5 @@ class GeneratedImage < ApplicationRecord
     a.variant :thumb, resize_to_fit: [200, 200]
     a.variant :large, resize_to_fit: [1200, 1200]
   end
+  delegate :description, to: :prompt
 end

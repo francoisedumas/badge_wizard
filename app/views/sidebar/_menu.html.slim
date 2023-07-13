@@ -15,6 +15,6 @@ nav.mt-10.flex-1.px-2.space-y-1
     policy: AdminPolicy.role_can_access?)
 
   = render MenuLinkComponent.new(title: "New projects", icon: "fa-folder-open", path: new_generated_image_path)
-  = render MenuLinkComponent.new(title: "History", icon: "fa-inbox", path: "#")
+  = render MenuLinkComponent.new(title: "History", icon: "fa-inbox", path: generated_images_path)
   / = render MenuLinkComponent.new(title: "Calendar", icon: "fa-calendar", path: "#")
   / = render MenuLinkComponent.new(title: "Reports", icon: "fa-chart-column", path: "#")

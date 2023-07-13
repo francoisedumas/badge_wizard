@@ -1,2 +1,6 @@
-- @prompt.generated_images.each do |generated_image|
-  = image_tag generated_image.image.variant(:thumb)
+- if @prompt.generated_images.any?
+  .grid.grid-cols-1.md:grid-cols-3.gap-4.place-items-start
+    - @prompt.generated_images.each do |generated_image|
+      = image_tag generated_image.image.variant(:thumb), class: "h-auto max-w-full rounded-lg"
+- else
+  p = t("sorry_nothing")
