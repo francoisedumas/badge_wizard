@@ -46,6 +46,7 @@ gem "enumerize"
 group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
+  gem "annotate"
 end
 
 group :development, :test do
@@ -62,7 +63,7 @@ gem "devise-i18n"
 gem "devise_invitable"
 gem "view_component"
 gem "image_processing", "~> 1.2"
-gem 'pagy'
+gem "pagy"
 
 # Temporary for demonstration
-gem 'unsplash'
+gem "unsplash"
