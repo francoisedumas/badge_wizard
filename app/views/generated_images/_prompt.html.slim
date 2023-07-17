@@ -3,7 +3,7 @@
 - if @prompt.generated_images.any?
   .grid.grid-cols-1.md:grid-cols-3.gap-4.place-items-start
     - @prompt.generated_images.each do |generated_image|
-      = link_to rails_blob_path(generated_image.image, disposition: "attachment") do
+      = link_to rails_blob_path(generated_image.image, disposition: "attachment", download: "image"), target: "_blank" do
         = image_tag generated_image.image.variant(:thumb), class: "h-auto max-w-full rounded-lg"
 - else
   p = t("sorry_nothing")

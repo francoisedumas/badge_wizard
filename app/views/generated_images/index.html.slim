@@ -2,6 +2,6 @@
   = t(".collection")
 
 .container.mx-auto.px-5.py-2.lg:px-32.lg:pt-12
-  = turbo_frame_tag :generated_images, loading: :lazy do
-    .-m-1.flex.flex-wrap.md-m-2
-      = render @generated_images
+  .-m-1.flex.flex-wrap.md-m-2
+    = render @generated_images
+  = render "generated_images/next_page"

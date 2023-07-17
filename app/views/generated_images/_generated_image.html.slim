@@ -1,5 +1,5 @@
 .flex.w-1/3.flex-wrap
   .w-full.p-1.md:p-2.relative
-    = link_to rails_blob_path(generated_image.image, disposition: "attachment") do
+    = link_to rails_blob_path(generated_image.image, disposition: "attachment", download: "image"), target: "_blank" do
       = image_tag generated_image.image.variant(:large), class: "block h-full w-full rounded-lg object-cover object-center"
       .opacity-0.hover:opacity-100.backdrop-blur-sm.duration-300.absolute.inset-0.z-10.flex.justify-center.items-center.text-white.text-sm.font-medium = generated_image.description
