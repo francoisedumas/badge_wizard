@@ -1,7 +1,8 @@
 doctype html
 html.h-full.bg-gray-100
   = render "layouts/head"
-  body.h-full
+  body.h-full.antialiased
+    = render partial: "layouts/flash"
     div data={ controller: "sidebar" }
       = render "sidebar/mobile"
       = render "sidebar/desktop"
