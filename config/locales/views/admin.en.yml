@@ -1,15 +1,16 @@
+---
 en:
   admin:
     base:
       index:
         title: Admin
     users:
+      edit:
+        title: Modify user
+      form:
+        invite: Submit invitation
       index:
         new: Add a user
         title: Users
       new:
         title: New user
-      edit:
-        title: Modify user
-      form:
-        invite: Submit invitation

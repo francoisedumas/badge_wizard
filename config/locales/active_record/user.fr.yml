@@ -1,14 +1,16 @@
+---
 fr:
   activerecord:
-    models:
-      user: Utilisateur
     attributes:
       user:
-        edit_link: ""
+        created_at: Created at
+        edit_link: ''
         email: Email
         first_name: Prénom
         full_name: Nom complet
         last_name: Nom
+        role: Rôle
         role_text: Rôle
-        created_at: Created at
         updated_at: Last modification
+    models:
+      user: Utilisateur

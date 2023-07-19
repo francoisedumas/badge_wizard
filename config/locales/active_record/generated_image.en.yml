@@ -1,8 +1,9 @@
+---
 en:
   activerecord:
-    models:
-      generated_image: Generated image
     attributes:
       generated_image:
         created_at: Created at
         updated_at: Last modification
+    models:
+      generated_image: Generated image

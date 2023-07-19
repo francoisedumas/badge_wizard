@@ -1,18 +1,19 @@
+---
 fr:
   maintenance:
     base:
       index:
         title: Maintenance
+    jobs:
+      index:
+        title: Jobs
     users:
+      edit:
+        title: Modifier l'utilisateur
+      form:
+        invite: Envoyer l'invitation
       index:
         new: Ajouter un utilisateur
         title: Utilisateurs
       new:
         title: Nouvel utilisateur
-      edit:
-        title: Modifier l'utilisateur
-      form:
-        invite: Envoyer l'invitation
-    jobs:
-      index:
-        title: Jobs
