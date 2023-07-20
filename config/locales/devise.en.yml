@@ -64,3 +64,7 @@ en:
     unlocks:
       new:
         resend_unlock_instructions: Resend unlock instructions
+  passwords:
+    update:
+      invalid_password: Invalid password.
+      update_success: Password updated successfully.

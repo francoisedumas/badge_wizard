@@ -7,9 +7,9 @@ class PasswordsController < Devise::PasswordsController
     user = current_user
     if user.update_with_password(password_params)
       sign_in user, bypass: true
-      flash[:notice] = t("devise.passwords.updated_not_active")
+      flash[:notice] = t(".update_success")
     else
-      flash[:alert] = t("devise.passwords.update_not_working")
+      flash[:alert] = t(".invalid_password")
     end
     redirect_to edit_profile_path
   end
