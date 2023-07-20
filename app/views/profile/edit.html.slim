@@ -14,7 +14,7 @@
     - c.with_action do
       = f.submit t("save"), class: "btn btn-primary"
 
-= simple_form_for current_user, url: password_path(current_user), method: :put do |f|
+= simple_form_for current_user, url: password_path(current_user), html: { method: :put, id: :edit_password } do |f|
   = render FormComponent.new do |c|
     = f.input :current_password, autocomplete: "off", placeholder: t("placeholders.current_password"), input_html: { type: "password" }
     = f.input :password, autocomplete: "off", placeholder: t("placeholders.new_password"), input_html: { type: "password" }
