@@ -1,4 +1,4 @@
-.flex.w-1/3.flex-wrap
+= turbo_frame_tag dom_id(generated_image), class:"flex w-1/3 flex-wrap" do
   .w-full.p-1.md:p-2.relative
     = link_to rails_blob_path(generated_image.image, disposition: "attachment", download: "image"), target: "_blank" do
       = image_tag generated_image.image.variant(:large), class: "block h-full w-full rounded-lg object-cover object-center"

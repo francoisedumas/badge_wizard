@@ -10,6 +10,10 @@ class GeneratedImagesController < ApplicationController
     render "scrollable_list" if params[:page]
   end
 
+  def show
+    @generated_image = Current.user.generated_images.includes(:prompt).find(params[:id])
+  end
+
   def new
     @prompt = Prompt.new
   end

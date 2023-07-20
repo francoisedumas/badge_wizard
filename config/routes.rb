@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
     resource :profile, only: [:edit, :update], controller: :profile
     resources :passwords, only: [:update]
-    resources :generated_images, only: [:new, :create, :index]
+    resources :generated_images, only: [:new, :create, :index, :show]
 
     authenticate :user, -> (user) { user.maintainer? } do
       draw :maintenance
