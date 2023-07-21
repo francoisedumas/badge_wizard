@@ -17,6 +17,15 @@ en:
         action: Confirm my account
         greeting: Welcome %{recipient}!
         instruction: 'You can confirm your account email through the link below:'
+      email_changed:
+        greeting: Hello %{recipient}!
+        message: We would like to inform you that your email has been replaced by %{email}.
+        message_unconfirmed: We would like to inform you that you're email is being replaced by %{email}.
+        subject: Email Changed
+      password_change:
+        greeting: Hello %{recipient}!
+        message: We would like to inform you that your password has been modified.
+        subject: Password Changed
       reset_password_instructions:
         action: Change my password
         greeting: Hello %{recipient}!
@@ -52,6 +61,8 @@ en:
     sessions:
       new:
         sign_in: Sign in
+      signed_in: Successfully signed in.
+      signed_out: Successfully signed out.
     shared:
       links:
         back: Back
@@ -61,9 +72,22 @@ en:
         sign_in: Sign in
         sign_in_with_provider: Sign in with %{provider}
         sign_up: Sign up
+      minimum_password_length:
+        one: "(at least %{count} character)"
+        other: "(at least %{count} characters)"
     unlocks:
       new:
         resend_unlock_instructions: Resend unlock instructions
+  errors:
+    messages:
+      already_confirmed: was already confirmed, please try signing in
+      confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
+      expired: has expired, please request a new one
+      not_found: not found
+      not_locked: was not locked
+      not_saved:
+        one: '1 error prohibited this %{resource} from being saved:'
+        other: "%{count} errors prohibited this %{resource} from being saved:"
   passwords:
     update:
       invalid_password: Invalid password.
