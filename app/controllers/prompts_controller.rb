@@ -18,7 +18,7 @@ class PromptsController < ApplicationController
     if @prompt.save
       respond_to do |format|
         format.turbo_stream
-        format.html { redirect_to action: "show" }
+        format.html { redirect_to prompt_path(@prompt) }
       end
     else
       render :new, status: :unprocessable_entity
@@ -46,5 +46,9 @@ class PromptsController < ApplicationController
       generated_image = @prompt.generated_images.build
       generated_image.image.attach(io: file, filename: "generated_image_#{index}")
     end
+  end
+
+  def active_menu_link
+    new_prompt_path
   end
 end

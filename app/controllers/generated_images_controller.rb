@@ -12,4 +12,10 @@ class GeneratedImagesController < ApplicationController
   def show
     @generated_image = Current.user.generated_images.includes(:prompt).find(params[:id])
   end
+
+  private
+
+  def active_menu_link
+    generated_images_path
+  end
 end
