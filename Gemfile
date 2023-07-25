@@ -37,12 +37,18 @@ group :development do
 end
 
 group :development, :test do
+  gem "annotate"
+  gem "factory_bot_rails", "~> 6.2"
+  gem "faker"
+  gem "i18n-tasks", "~> 1.0.12"
   gem "pry-byebug"
   gem "pry-rails"
-  gem "annotate"
+  gem "rspec-rails", "~> 6.0.0"
+  gem "rubocop-rails", require: false
 end
 
-group :development, :test do
-  gem "rubocop-rails", require: false
-  gem "i18n-tasks", "~> 1.0.12"
+group :test do
+  gem "shoulda-matchers"
+  gem "webmock"
+  gem "vcr"
 end
