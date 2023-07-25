@@ -6,7 +6,7 @@ RSpec.describe GeneratedImagesController do
   subject { response }
 
   let(:user) { create(:user) }
-  let(:do_request) { get(path, params: params) }
+  let(:do_request) { get(path, params:) }
   let(:params) { {} }
   let(:generated_image) { create(:generated_image) }
 

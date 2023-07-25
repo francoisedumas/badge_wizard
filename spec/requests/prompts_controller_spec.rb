@@ -6,10 +6,10 @@ RSpec.describe PromptsController do
   subject { response }
 
   let(:user) { create(:user) }
-  let(:prompt) { create(:prompt, user: user) }
-  let(:do_request) { get(path, params: params) }
+  let(:prompt) { create(:prompt, user:) }
+  let(:do_request) { get(path, params:) }
   let(:params) { {} }
-  let(:generated_image) { create(:generated_image, prompt: prompt) }
+  let(:generated_image) { create(:generated_image, prompt:) }
 
   before do
     sign_in(user)
@@ -51,9 +51,9 @@ RSpec.describe PromptsController do
 
       it "creates a new Prompt" do
         VCR.use_cassette("create_prompt") do
-          expect {
+          expect do
             post(path, params: { prompt: prompt_params })
-          }.to change(Prompt, :count).by(1)
+          end.to change(Prompt, :count).by(1)
         end
       end
     end
@@ -62,15 +62,15 @@ RSpec.describe PromptsController do
       let(:prompt_params) { { description: nil } }
 
       it "does not create a new Prompt" do
-        expect {
+        expect do
           post(path, params: { prompt: prompt_params })
-        }.not_to change(Prompt, :count)
+        end.not_to change(Prompt, :count)
       end
 
       it "does not create any new GeneratedImages" do
-        expect {
+        expect do
           post(path, params: { prompt: prompt_params })
-        }.not_to change(GeneratedImage, :count)
+        end.not_to change(GeneratedImage, :count)
       end
 
       it "renders the :new template with unprocessable_entity status" do

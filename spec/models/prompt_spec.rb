@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe Prompt, type: :model do
   subject { create(:prompt, description: "cat") }

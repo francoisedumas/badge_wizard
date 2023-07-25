@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe User, type: :model do
   subject { create(:user, first_name: "Alice", last_name: " Liddell ") }
@@ -27,11 +29,13 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_one_attached(:photo) }
   end
 
-  it { should enumerize(:role).in(
-    :admin,
-    :maintainer,
-    :default
-  ) }
+  it {
+    should enumerize(:role).in(
+      :admin,
+      :maintainer,
+      :default
+    )
+  }
 
   describe "#full_name" do
     it "returns the user first & last name" do

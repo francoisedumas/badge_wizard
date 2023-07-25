@@ -49,7 +49,6 @@ class User < ApplicationRecord
   has_many :prompts, dependent: :destroy
   has_many :generated_images, through: :prompts
 
-
   # Validation
   validates :email, presence: true
   validates :email, uniqueness: true
@@ -57,6 +56,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   def full_name
-    "#{first_name&.strip.capitalize} #{last_name&.strip.upcase}".strip.presence || email.match(/^[^@]+/).to_s.capitalize
+    full = "#{first_name&.strip&.capitalize} #{last_name&.strip&.upcase}"
+    full.strip.presence || email.match(/^[^@]+/).to_s.capitalize
   end
 end

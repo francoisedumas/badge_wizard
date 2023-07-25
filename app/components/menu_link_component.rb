@@ -4,6 +4,7 @@ class MenuLinkComponent < ViewComponent::Base
   attr_reader :title, :icon, :path, :policy, :controllers
 
   def initialize(title:, icon:, path:, policy: true, controllers: [])
+    super
     @title = title
     @icon = icon
     @path = path
