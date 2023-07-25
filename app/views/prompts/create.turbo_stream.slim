@@ -1,4 +1,4 @@
-= turbo_stream.update Prompt.new, ""
+/ = turbo_stream.update Prompt.new, ""
 = turbo_stream.remove "image_generation_pulse"
 = turbo_stream.append "generated_images" do
   = render "prompt", prompt: @prompt

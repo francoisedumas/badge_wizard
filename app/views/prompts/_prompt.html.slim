@@ -1,5 +1,5 @@
 .flex.justify-center
-  = link_to t(".new_prompt"), new_generated_image_path, class: "btn mb-8", data: { turbo_frame: "_top" }
+  = link_to t(".new_prompt"), new_prompt_path, class: "btn mb-8", data: { turbo_frame: "_top" }
 - if @prompt.generated_images.any?
   .grid.grid-cols-1.md:grid-cols-3.gap-4.place-items-start
     - @prompt.generated_images.each do |generated_image|

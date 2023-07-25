@@ -14,5 +14,5 @@ nav.mt-10.flex-1.px-2.space-y-1
     path: admin_users_path,
     policy: AdminPolicy.role_can_access?)
 
-  = render MenuLinkComponent.new(title: t("menu.new_prompt"), icon: "fa-folder-open", path: new_generated_image_path)
+  = render MenuLinkComponent.new(title: t("menu.new_prompt"), icon: "fa-folder-open", path: new_prompt_path)
   = render MenuLinkComponent.new(title: t("menu.history"), icon: "fa-inbox", path: generated_images_path)

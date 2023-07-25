@@ -3,7 +3,3 @@ en:
   generated_images:
     index:
       collection: List of generated images
-    new:
-      new_template: Generate new templates
-    prompt:
-      new_prompt: Start a new prompt

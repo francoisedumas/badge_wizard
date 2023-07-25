@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
     resource :profile, only: [:edit, :update], controller: :profile
     resources :passwords, only: [:update]
-    resources :generated_images, only: [:new, :create, :index, :show]
+    resources :generated_images, only: [:index, :show]
+    resources :prompts, only: [:new, :create, :show]
 
     authenticate :user, -> (user) { user.maintainer? } do
       draw :maintenance
@@ -18,5 +19,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root "generated_images#new"
+  root "prompts#new"
 end

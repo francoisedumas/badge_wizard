@@ -1,5 +1,5 @@
 . data-toggle-target="content"
-  = simple_form_for @prompt, url: generated_images_path do |f|
+  = simple_form_for @prompt, url: prompts_path do |f|
     = render FormComponent.new do |c|
       = f.input :description, placeholder:  t("placeholders.new_prompt"), class: "text-input", label: false
 
