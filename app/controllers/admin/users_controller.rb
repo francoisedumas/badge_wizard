@@ -49,9 +49,5 @@ module Admin
     def user_params
       params.require(:user).permit(:email, :last_name, :first_name, :role)
     end
-
-    def active_menu_link
-      admin_users_path
-    end
   end
 end

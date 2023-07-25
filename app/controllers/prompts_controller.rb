@@ -47,8 +47,4 @@ class PromptsController < ApplicationController
       generated_image.image.attach(io: file, filename: "generated_image_#{index}")
     end
   end
-
-  def active_menu_link
-    new_prompt_path
-  end
 end

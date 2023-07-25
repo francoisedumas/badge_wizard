@@ -2,7 +2,8 @@ nav.mt-10.flex-1.px-2.space-y-1
   = render MenuLinkComponent.new(title: t("menu.maintenance"),
     icon: "fa-house",
     path: maintenance_path,
-    policy: MaintenancePolicy.role_can_access?)
+    policy: MaintenancePolicy.role_can_access?,
+    controllers: %w[maintenance/base maintenance maintenance/users])
 
   = render MenuLinkComponent.new(title: t("menu.admin"),
     icon: "fa-house",

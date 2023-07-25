@@ -12,9 +12,5 @@ module Maintenance
     def enforce_policy
       return head :forbidden unless MaintenancePolicy.role_can_access?
     end
-
-    def active_menu_link
-      maintenance_path
-    end
   end
 end
