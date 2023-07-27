@@ -7,7 +7,9 @@ en:
   french: French
   generate: Generate
   save: Save
+  select_tab: Select a tab
   sorry_nothing: Oups sorry we didn't find anything
+  tabs: Tabs
   update: Update
   update_done: Successfully updated
   update_error: The update couldn't be completed

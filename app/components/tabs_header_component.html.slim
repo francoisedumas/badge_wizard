@@ -7,7 +7,7 @@
 
   = content_tag :div, class: class_names("mt-1 sm:mt-0", if: title.present?) do
     .sm:hidden
-      = render Navs::SelectNavComponent.new(label: t(".select_tab"), links: links)
+      = render Navs::SelectNavComponent.new(label: t("select_tab"), links: links)
     .hidden.sm:block
       = render Navs::TabNavComponent.new do |c|
         - c.with_tabs(links)
