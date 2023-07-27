@@ -1,0 +1,13 @@
+.pb-5.border-b.border-gray-200.sm:pb-0
+  .pb-1.sm:flex.sm:items-start.sm:justify-between
+    = tag.div class: class_names("min-w-0 flex-1 flex space-x-3 items-start") do
+      .sm:w-0.sm:flex-1
+        - if title.present?
+          h2.text-2xl.font-bold.leading-7.text-gray-900.sm:text-3xl.sm:truncate = title
+
+  = content_tag :div, class: class_names("mt-1 sm:mt-0", if: title.present?) do
+    .sm:hidden
+      = render Navs::SelectNavComponent.new(label: t(".select_tab"), links: links)
+    .hidden.sm:block
+      = render Navs::TabNavComponent.new do |c|
+        - c.with_tabs(links)

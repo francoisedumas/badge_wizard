@@ -1,0 +1,5 @@
+= label_tag :current_path, @label, class: "sr-only"
+= select_tag :current_path,
+  options_for_select(options, selected_target),
+  data: {controller: "select-nav", action: "change->select-nav#navigate"},
+  class: "form-control"
