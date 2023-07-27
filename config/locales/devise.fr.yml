@@ -88,7 +88,7 @@ fr:
       not_saved:
         one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
         other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
-  passwords:
+  password:
     update:
       invalid_password: Mot de passe incorrect.
       update_success: Votre mot de passe a été changé.

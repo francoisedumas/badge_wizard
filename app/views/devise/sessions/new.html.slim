@@ -1,8 +1,8 @@
 h2.mt-6.text-3xl.font-extrabold.text-gray-900 = t(".sign_in")
 .mt-8
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    = f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" }
-    = f.input :password, required: false, input_html: { autocomplete: "current-password" }
+    = f.input :email, autofocus: true, placeholder: t("placeholders.email"), input_html: { autocomplete: "email", required: true}
+    = f.input :password, placeholder: t("placeholders.your_password"), input_html: { autocomplete: "current-password", required: true }
 
     .flex.items-center.justify-between
       = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
