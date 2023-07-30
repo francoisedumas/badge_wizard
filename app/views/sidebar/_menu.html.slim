@@ -22,3 +22,7 @@ nav.mt-10.flex-1.px-2.space-y-1
   = render MenuLinkComponent.new(title: t("menu.history"),
     icon: "fa-inbox",
     path: generated_images_path)
+
+  absolute.hidden.md:flex.md:justify-end.right-2.top-2.cursor-pointer.p-4 data={ "action": "click->collapse#toggle", "collapse-target": "icon" }
+    svg.h-6.w-6.text-white[xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"]
+      path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"]

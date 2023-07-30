@@ -1,5 +1,5 @@
 .flex-1.pt-5.pb-4.overflow-y-auto class=(media == :mobile ? "h-0" : "flex flex-col")
-  .flex.items-center.flex-shrink-0.px-4
+  .flex.items-center.flex-shrink-0.px-4 data={ "collapse-target": "logo" }
     = image_tag "logo.svg", class: "h-16 w-auto", alt: "logo"
     - I18n.available_locales.each do |locale|
         - if I18n.locale != locale
@@ -10,10 +10,9 @@
     .flex.items-center
       div
         = rounded_image(current_user.photo, 40)
-        / = image_tag "profile.webp", class: "inline-block h-9 w-9 rounded-full", alt: "profile"
-      .ml-3
+      .ml-3 data={ "collapse-target": "other" }
         p.text-sm.font-medium.text-white = current_user.full_name
         p.text-xs.font-medium.text-indigo-200.group-hover:text-white = t(".view_profile")
 
-  = button_to destroy_user_session_path, method: :delete do
+  = button_to destroy_user_session_path, method: :delete, data: { "collapse-target": "other" } do
     i.fa-solid.fa-arrow-right-from-bracket.text-white
