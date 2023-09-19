@@ -10,6 +10,12 @@ export default class extends Controller {
     } else {
       this.collapse();
     }
+
+    if ( window.innerWidth < 768) {
+      // Make sure there is no padding-left style
+      const nextSibling = this.containerTarget.parentElement.nextElementSibling;
+      nextSibling.style.removeProperty("padding-left");
+    }
   }
 
   saveStateToLocalStorage(expanded) {
@@ -31,6 +37,7 @@ export default class extends Controller {
 
   applyStyles(expanded) {
     this.containerTarget.classList.toggle("md:w-64", expanded);
+    this.togglePaddingLeft(expanded);
     this.logoTarget.classList.toggle("flex-col", !expanded);
     this.logoTarget.firstChild.classList.toggle("h-16", expanded);
     this.logoTarget.firstChild.classList.toggle("h-10", !expanded);
@@ -66,5 +73,16 @@ export default class extends Controller {
   expand() {
     this.containerTarget.dataset.expanded = "1";
     this.applyStyles(true);
+  }
+
+  // solve issue with the md:pl-64
+  togglePaddingLeft(expanded) {
+    if (expanded) {
+      // Remove padding-left: 88px; from the style attribute
+      this.containerTarget.parentElement.nextElementSibling.style.removeProperty("padding-left");
+    } else {
+      // Add padding-left: 88px; to the style attribute
+      this.containerTarget.parentElement.nextElementSibling.style.setProperty("padding-left", "88px");
+    }
   }
 }

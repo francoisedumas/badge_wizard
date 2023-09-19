@@ -1,20 +1,19 @@
 doctype html
 html.h-full.bg-gray-100
   = render "layouts/head"
-  body.h-full.antialiased
-    = render partial: "layouts/flash"
-    div data={ controller: "sidebar" }
-      aside
-        = render "sidebar/mobile"
-        = render "sidebar/desktop"
+  = render partial: "layouts/flash"
+  body.h-full.antialiased data={ controller: "sidebar" }
+    aside
+      = render "sidebar/mobile"
+      = render "sidebar/desktop"
 
-      main.md:pl-64.flex.flex-col.flex-1
-        .p-6
-          - if @breadcrumb_items
-            = render BreadcrumbComponent.new(items: @breadcrumb_items, title: yield(:title))
-          = content_tag :div, class_names("md:flex md:items-center md:justify-between #{"mb-10 mt-4" if content_for? :title}") do
-            .flex-1.min-w-0
-              h2.text-2xl.font-bold.leading-7.text-gray-900.sm:text-3xl.sm:truncate
-                = yield :title
-            = yield :actions
-          = yield
+    main.md:pl-64.flex.flex-col.flex-1
+      .p-6
+        - if @breadcrumb_items
+          = render BreadcrumbComponent.new(items: @breadcrumb_items, title: yield(:title))
+        = content_tag :div, class_names("md:flex md:items-center md:justify-between #{"mb-10 mt-4" if content_for? :title}") do
+          .flex-1.min-w-0
+            h2.text-2xl.font-bold.leading-7.text-gray-900.sm:text-3xl.sm:truncate
+              = yield :title
+          = yield :actions
+        = yield
