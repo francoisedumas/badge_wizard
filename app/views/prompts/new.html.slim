@@ -2,9 +2,9 @@
   = t(".new_template")
 
 = turbo_frame_tag "global" do
-  . data-controller="toggle" data-toggle-class-value="hidden" data-action="turbo:before-fetch-request@document->toggle#toggle"
+  . data-controller="toggle hide-spinner-on-error" data-toggle-class-value="hidden" data-action="turbo:before-fetch-request@document->toggle#toggle turbo:frame-load@document->hide-spinner-on-error#hideSpinnerIfInvalid"
     = turbo_frame_tag Prompt.new do
       = render "form"
-    = turbo_frame_tag "image_generation_pulse" do
-      = render "pulse"
+    = turbo_frame_tag "image_generation_spinner" do
+      = render "spinner"
     = turbo_frame_tag "generated_images"
