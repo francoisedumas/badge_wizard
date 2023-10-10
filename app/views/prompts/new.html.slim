@@ -1,9 +1,10 @@
 - content_for :title do
   = t(".new_template")
 
-. data-controller="toggle" data-toggle-class-value="hidden" data-action="turbo:before-fetch-request@document->toggle#toggle"
-  = turbo_frame_tag Prompt.new do
-    = render "form"
-  = turbo_frame_tag "image_generation_pulse" do
-    = render "pulse"
-  = turbo_frame_tag "generated_images"
+= turbo_frame_tag "global" do
+  . data-controller="toggle" data-toggle-class-value="hidden" data-action="turbo:before-fetch-request@document->toggle#toggle"
+    = turbo_frame_tag Prompt.new do
+      = render "form"
+    = turbo_frame_tag "image_generation_pulse" do
+      = render "pulse"
+    = turbo_frame_tag "generated_images"
