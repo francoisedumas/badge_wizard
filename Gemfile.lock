@@ -74,8 +74,20 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    addressable (2.8.4)
+      public_suffix (>= 2.0.2, < 6.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     ast (2.4.2)
     bcrypt (3.1.18)
+    better_html (2.0.2)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -84,6 +96,8 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
     connection_pool (2.3.0)
+    crack (0.4.5)
+      rexml
     crass (1.0.6)
     date (3.3.3)
     devise (4.8.1)
@@ -97,17 +111,53 @@ GEM
     devise_invitable (2.0.6)
       actionmailer (>= 5.0)
       devise (>= 4.6)
+    diff-lcs (1.5.0)
     enumerize (2.7.0)
       activesupport (>= 3.2)
     erubi (1.12.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (2.23.0)
+      i18n (>= 1.8.11, < 2)
+    faraday (2.7.10)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.0.2)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    hashdiff (1.0.1)
+    hashie (5.0.0)
+    highline (2.1.0)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    i18n-tasks (1.0.12)
+      activesupport (>= 4.0.2)
+      ast (>= 2.1.0)
+      better_html (>= 1.0, < 3.0)
+      erubi
+      highline (>= 2.0.0)
+      i18n
+      parser (>= 2.2.3.0)
+      rails-i18n
+      rainbow (>= 2.2.2, < 4.0)
+      terminal-table (>= 1.5.1)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (1.2.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     json (2.6.3)
+    jwt (2.7.1)
     language_server-protocol (3.17.0.3)
     loofah (2.21.3)
       crass (~> 1.0.2)
@@ -119,9 +169,12 @@ GEM
       net-smtp
     marcel (1.0.2)
     method_source (1.0.0)
+    mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.18.1)
     msgpack (1.7.1)
+    multi_xml (0.6.0)
+    multipart-post (2.3.0)
     net-imap (0.3.6)
       date
       net-protocol
@@ -134,7 +187,15 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.3-arm64-darwin)
       racc (~> 1.4)
+    oauth2 (2.0.9)
+      faraday (>= 0.17.3, < 3.0)
+      jwt (>= 1.0, < 3.0)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 4)
+      snaky_hash (~> 2.0)
+      version_gem (~> 1.1)
     orm_adapter (0.5.0)
+    pagy (6.0.4)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -148,6 +209,7 @@ GEM
       pry (>= 0.13, < 0.15)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+    public_suffix (5.0.3)
     puma (5.6.6)
       nio4r (~> 2.0)
     racc (1.7.1)
@@ -193,6 +255,23 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.3)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.12)
+      rspec-expectations (~> 3.12)
+      rspec-mocks (~> 3.12)
+      rspec-support (~> 3.12)
+    rspec-support (3.12.1)
     rubocop (1.54.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -211,6 +290,11 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.13.0)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
+    ruby2_keywords (0.0.5)
+    shoulda-matchers (5.3.0)
+      activesupport (>= 5.2.0)
     sidekiq (6.5.8)
       connection_pool (>= 2.2.5, < 3)
       rack (~> 2.0)
@@ -224,6 +308,10 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 6.0, != 5.0.0)
+    smart_properties (1.17.0)
+    snaky_hash (2.0.1)
+      hashie
+      version_gem (~> 1.1, >= 1.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -236,6 +324,8 @@ GEM
     tailwindcss-rails (2.0.29-arm64-darwin)
       railties (>= 6.0.0)
     temple (0.10.2)
+    terminal-table (3.0.2)
+      unicode-display_width (>= 1.1.1, < 3)
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.4.0)
@@ -246,6 +336,12 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
+    unsplash (3.0.0)
+      faraday-multipart (~> 1.0.4)
+      httparty (~> 0.20)
+      oauth2 (>= 2.0.8)
+    vcr (6.2.0)
+    version_gem (1.1.3)
     view_component (3.3.0)
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
@@ -257,6 +353,10 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
+    webmock (3.18.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -266,12 +366,18 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  annotate
   bootsnap
   devise
   devise-i18n
   devise_invitable
   enumerize
+  factory_bot_rails (~> 6.2)
+  faker
+  i18n-tasks (~> 1.0.12)
+  image_processing (~> 1.2)
   importmap-rails
+  pagy
   pg (~> 1.1)
   pry-byebug
   pry-rails
@@ -279,7 +385,9 @@ DEPENDENCIES
   rails (~> 7.0.5)
   rails-i18n (~> 7.0.0)
   redis (~> 4.0)
+  rspec-rails (~> 6.0.0)
   rubocop-rails
+  shoulda-matchers
   sidekiq
   sidekiq-failures (~> 1.0)
   simple_form!
@@ -288,11 +396,14 @@ DEPENDENCIES
   stimulus-rails
   tailwindcss-rails
   turbo-rails
+  unsplash
+  vcr
   view_component
   web-console
+  webmock
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.1.4p223
 
 BUNDLED WITH
    2.3.16

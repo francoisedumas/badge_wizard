@@ -2,7 +2,8 @@ nav.mt-10.flex-1.px-2.space-y-1
   = render MenuLinkComponent.new(title: t("menu.maintenance"),
     icon: "fa-house",
     path: maintenance_path,
-    policy: MaintenancePolicy.role_can_access?)
+    policy: MaintenancePolicy.role_can_access?,
+    controllers: %w[maintenance/base maintenance maintenance/users])
 
   = render MenuLinkComponent.new(title: t("menu.admin"),
     icon: "fa-house",
@@ -14,7 +15,14 @@ nav.mt-10.flex-1.px-2.space-y-1
     path: admin_users_path,
     policy: AdminPolicy.role_can_access?)
 
-  = render MenuLinkComponent.new(title: "Projects", icon: "fa-folder-open", path: "#")
-  = render MenuLinkComponent.new(title: "Calendar", icon: "fa-calendar", path: "#")
-  = render MenuLinkComponent.new(title: "Documents", icon: "fa-inbox", path: "#")
-  = render MenuLinkComponent.new(title: "Reports", icon: "fa-chart-column", path: "#")
+  = render MenuLinkComponent.new(title: t("menu.new_prompt"),
+    icon: "fa-folder-open",
+    path: new_prompt_path)
+
+  = render MenuLinkComponent.new(title: t("menu.history"),
+    icon: "fa-inbox",
+    path: generated_images_path)
+
+  absolute.hidden.md:flex.md:justify-end.right-2.top-2.cursor-pointer.p-4 data={ "action": "click->collapse#toggle", "collapse-target": "icon" }
+    svg.h-6.w-6.text-white[xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"]
+      path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"]

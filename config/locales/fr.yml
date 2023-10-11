@@ -1,4 +1,15 @@
+---
 fr:
+  back: Retour
   cancel: Annuler
   edit: Modifier
+  english: anglais
+  french: français
+  generate: Générer
   save: Enregistrer
+  select_tab: Sélectionner un onglet
+  sorry_nothing: Oups nous n'avons rien trouvé!
+  tabs: Onglets
+  update: Modifier
+  update_done: Modifié avec succès
+  update_error: La modification n'a pas pu être effectuée

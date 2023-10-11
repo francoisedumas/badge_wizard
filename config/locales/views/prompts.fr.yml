@@ -1,0 +1,7 @@
+---
+fr:
+  prompts:
+    new:
+      new_template: Génération de nouveaux patrons
+    prompt:
+      new_prompt: Faire une nouvelle recherche

@@ -1,0 +1,7 @@
+---
+en:
+  prompts:
+    new:
+      new_template: Generate new templates
+    prompt:
+      new_prompt: Start a new prompt

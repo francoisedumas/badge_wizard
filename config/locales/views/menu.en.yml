@@ -1,0 +1,8 @@
+---
+en:
+  menu:
+    admin: Admin
+    history: History
+    maintenance: Maintenance
+    new_prompt: New search
+    users: Users

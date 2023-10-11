@@ -1,0 +1,16 @@
+---
+en:
+  activerecord:
+    attributes:
+      user:
+        created_at: Créé le
+        edit_link: ''
+        email: Email
+        first_name: First name
+        full_name: Full name
+        last_name: Last name
+        role: Role
+        role_text: Role
+        updated_at: Dernière modification
+    models:
+      user: User

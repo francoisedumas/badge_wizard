@@ -1,0 +1,7 @@
+- content_for :title do
+  = t(".collection")
+
+.container.mx-auto.px-5.py-2.lg:px-32.lg:pt-12
+  .-m-1.flex.flex-wrap.md-m-2
+    = render @generated_images
+  = render "generated_images/next_page"

@@ -12,9 +12,5 @@ module Admin
     def enforce_policy
       return head :forbidden unless AdminPolicy.role_can_access?
     end
-
-    def active_menu_link
-      admin_path
-    end
   end
 end

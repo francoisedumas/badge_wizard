@@ -41,3 +41,12 @@ dev
 ### Backgroundjobs in production
 
 Sidekiq is available at path `/maintenance/sidekiq`
+
+### Mailcatcher issues
+Potentially use command `gem install mailcatcher -- --with-cflags="-Wno-error=implicit-function-declaration"`
+
+## TODO
+user can chose to modify a picture
+login page strange notification when disconnecting(Réussite de la deconnexion.)
+check admin vs mainteneur
+validation of email in front from Osponso! how does he do this??

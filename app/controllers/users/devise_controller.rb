@@ -16,6 +16,9 @@ module Users
       end
     end
 
+    def edit
+    end
+
     self.responder = Responder
     respond_to :html, :turbo_stream
   end

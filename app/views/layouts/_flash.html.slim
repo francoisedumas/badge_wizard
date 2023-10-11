@@ -1,0 +1,7 @@
+- if notice
+  = render FlashComponent.new(variant: :success) do
+    = sanitize notice
+
+- if alert
+  = render FlashComponent.new(variant: :alert) do
+    = sanitize alert

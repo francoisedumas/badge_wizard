@@ -1,0 +1,7 @@
+. data-toggle-target="content"
+  = simple_form_for @prompt, url: prompts_path do |f|
+    = render FormComponent.new do |c|
+      = f.input :description, placeholder:  t("placeholders.new_prompt"), class: "text-input", label: false
+
+      - c.with_action do
+        = f.submit t("generate"), class: "btn btn-primary"

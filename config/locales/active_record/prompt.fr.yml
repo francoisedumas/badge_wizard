@@ -1,0 +1,10 @@
+---
+fr:
+  activerecord:
+    attributes:
+      prompt:
+        created_at: Créé le
+        description: Description
+        updated_at: Dernière modification
+    models:
+      prompt: Demande

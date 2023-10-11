@@ -1,0 +1,9 @@
+---
+fr:
+  activerecord:
+    attributes:
+      generated_image:
+        created_at: Créé le
+        updated_at: Dernière modification
+    models:
+      generated_image: Image générée

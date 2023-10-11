@@ -1,0 +1,11 @@
+= render TabsHeaderComponent.new(title: t(".title"),
+  links: [{ title: t(".title"), target: edit_profile_path, data: {turbo_frame: :_top} },
+    { title: t(".password"), target: edit_password_path, data: {turbo_frame: :_top} }])
+
+= simple_form_for @user, url: password_path, html: { method: :put, id: :edit_password } do |f|
+  = render FormComponent.new do |c|
+    = f.input :current_password, autocomplete: "off", placeholder: t("placeholders.current_password"), input_html: { type: "password" }
+    = f.input :password, autocomplete: "off", placeholder: t("placeholders.new_password"), input_html: { type: "password" }
+    = f.input :password_confirmation, autocomplete: "off", placeholder: t("placeholders.confirm_new_password"), input_html: { type: "password" }
+    - c.with_action do
+      = f.submit t("update"), class: "btn btn-primary"

@@ -1,5 +1,8 @@
+---
 fr:
   menu:
     admin: Admin
+    history: Historique
     maintenance: Maintenance
+    new_prompt: Nouvelle recherche
     users: Utilisateurs

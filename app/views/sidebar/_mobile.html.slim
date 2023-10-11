@@ -37,3 +37,15 @@
       = render "sidebar/content", media: :mobile
 
     .flex-shrink-0.w-14[aria-hidden="true"]
+
+.flex.sticky.top-0.z-10.md:hidden.pl-1.pt-1.sm:pl-3.sm:pt-3.bg-gray-100
+  = button_tag type: "button",
+    data: { action: "sidebar#show" },
+    class: "-ml-0 5 -mt-0 5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" do
+    span.sr-only
+      | Open sidebar
+    svg.h-6.w-6 xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"
+      path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"
+  - I18n.available_locales.each do |locale|
+    - if I18n.locale != locale
+      = link_to t("#{locale}"), url_for(locale: locale), class:"text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-2.5 py-1 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 m-2"
