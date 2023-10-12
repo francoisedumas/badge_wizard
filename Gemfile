@@ -31,6 +31,7 @@ gem "view_component"
 # Omniauth
 gem "omniauth"
 gem "omniauth-google-oauth2"
+gem "omniauth-twitter"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 # Temporary for demonstration
