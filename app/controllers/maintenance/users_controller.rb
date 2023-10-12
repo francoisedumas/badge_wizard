@@ -3,7 +3,7 @@
 module Maintenance
   class UsersController < BaseController
     def index
-      @users = User.all.order(:last_name, :first_name)
+      @users = User.order(:last_name, :first_name)
       @breadcrumb_items = {
         "maintenance.base.index.title": maintenance_path
       }
