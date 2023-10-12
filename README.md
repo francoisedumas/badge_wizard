@@ -1,4 +1,6 @@
-# APP_NAME
+# Badge Wizard
+<img width="1443" alt="Screenshot 2023-10-12 at 17 01 19" src="https://github.com/francoisedumas/badge_wizard/assets/33062224/41ea53b2-db6f-43eb-a07b-6d7338f52a94">
+
 
 ## Setup
 
@@ -46,7 +48,6 @@ Sidekiq is available at path `/maintenance/sidekiq`
 Potentially use command `gem install mailcatcher -- --with-cflags="-Wno-error=implicit-function-declaration"`
 
 ## TODO
-user can chose to modify a picture
-login page strange notification when disconnecting(Réussite de la deconnexion.)
-check admin vs mainteneur
-validation of email in front from Osponso! how does he do this??
+user can chose to modify a picture add text to it
+move sign in button to VC
+dry the multi-auth process
