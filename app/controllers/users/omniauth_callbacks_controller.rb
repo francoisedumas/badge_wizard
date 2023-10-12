@@ -6,13 +6,23 @@ module Users
     # devise :omniauthable, omniauth_providers: [:twitter]
 
     # You should also create an action method in this controller like this:
-    # def twitter
-    # end
+    def twitter
+      user = User.from_omniauth(auth)
+
+      if user.present?
+        sign_out_all_scopes
+        flash[:success] = t("devise.omniauth_callbacks.success", kind: "Twitter")
+        sign_in_and_redirect user, event: :authentication
+      else
+        flash[:alert] =
+          t("devise.omniauth_callbacks.failure", kind: "Twitter", reason: "#{auth.info.email} is not authorized.")
+        redirect_to new_user_session_path
+      end
+    end
 
     def google_oauth2
       user = User.from_omniauth(auth)
 
-      # Add  && user.errors.nil? to capture errors
       if user.present?
         sign_out_all_scopes
         flash[:success] = t("devise.omniauth_callbacks.success", kind: "Google")

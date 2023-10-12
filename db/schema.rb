@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_11_145247) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_12_101006) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_11_145247) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "authorizations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "provider"
+    t.string "uid"
+    t.string "email"
+    t.string "refresh_token"
+    t.string "access_token"
+    t.string "access_token_secret"
+    t.boolean "expires", default: true, null: false
+    t.datetime "expires_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["uid", "provider"], name: "index_authorizations_on_uid_and_provider", unique: true
+    t.index ["user_id"], name: "index_authorizations_on_user_id"
   end
 
   create_table "generated_images", force: :cascade do |t|
@@ -89,6 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_11_145247) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "authorizations", "users"
   add_foreign_key "generated_images", "prompts"
   add_foreign_key "prompts", "users"
 end
