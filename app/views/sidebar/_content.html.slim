@@ -9,7 +9,10 @@
   = link_to edit_profile_path, class: "flex-shrink-0 group block" do
     .flex.items-center
       div
-        = rounded_image(current_user.photo, 40)
+        - if current_user.avatar_url.present?
+          = rounded_image(current_user.avatar_url, 40)
+        - else
+          = rounded_image(current_user.photo, 40)
       .ml-3 data={ "collapse-target": "other" }
         p.text-sm.font-medium.text-white = current_user.full_name
         p.text-xs.font-medium.text-indigo-200.group-hover:text-white = t(".view_profile")

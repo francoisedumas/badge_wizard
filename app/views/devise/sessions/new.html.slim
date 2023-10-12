@@ -1,4 +1,9 @@
 h2.mt-6.text-3xl.font-extrabold.text-gray-900 = t(".sign_in")
+
+.mt-8.flex.items-center.justify-center
+  = button_to user_google_oauth2_omniauth_authorize_path, method: :post, :data => {turbo: "false"} do
+    = image_tag("btn_google_signin_light_normal_web.png")
+
 .mt-8
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     = f.input :email, autofocus: true, placeholder: t("placeholders.email"), input_html: { autocomplete: "email", required: true}

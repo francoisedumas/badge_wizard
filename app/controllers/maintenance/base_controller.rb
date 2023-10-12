@@ -10,7 +10,7 @@ module Maintenance
     private
 
     def enforce_policy
-      return head :forbidden unless MaintenancePolicy.role_can_access?
+      head :forbidden unless MaintenancePolicy.role_can_access?
     end
   end
 end

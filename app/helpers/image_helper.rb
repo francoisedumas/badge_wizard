@@ -2,7 +2,7 @@
 
 module ImageHelper
   def rounded_image(target_image, size = 40, classes = nil)
-    if target_image.attached?
+    if target_image.is_a?(String) || target_image.attached?
       image_tag(target_image,
                 height: size,
                 width: size,

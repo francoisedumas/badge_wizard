@@ -10,7 +10,7 @@ module Admin
     private
 
     def enforce_policy
-      return head :forbidden unless AdminPolicy.role_can_access?
+      head :forbidden unless AdminPolicy.role_can_access?
     end
   end
 end

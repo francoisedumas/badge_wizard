@@ -2,9 +2,9 @@
 
 module Navs
   class TabNavComponent < ViewComponent::Base
-    renders_many :tabs, ->(title:, target:, data: {}, controllers: [], hidden: false) do
+    renders_many :tabs, lambda { |title:, target:, data: {}, controllers: [], hidden: false|
       Navs::TabComponent.new(title:, target:, data:, active: active?(target, controllers), hidden:)
-    end
+    }
 
     private
 
