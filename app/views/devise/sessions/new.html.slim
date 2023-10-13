@@ -1,7 +1,7 @@
 h2.mt-6.text-3xl.font-extrabold.text-gray-900 = t(".sign_in")
 
-= render(SocialSignInButtonComponent.new(:google, user_google_oauth2_omniauth_authorize_path))
-= render(SocialSignInButtonComponent.new(:twitter, user_twitter_omniauth_authorize_path))
+= render SocialSignInButtonComponent.new(:google)
+= render SocialSignInButtonComponent.new(:twitter)
 
 .mt-8
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

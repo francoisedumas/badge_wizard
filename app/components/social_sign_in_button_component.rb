@@ -4,18 +4,23 @@ class SocialSignInButtonComponent < ViewComponent::Base
   include IconsHelper
 
   COLOR = {
-    google: "bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-[#4285F4]/50 dark:focus:ring-[#4285F4]/55",
-    twitter: "bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-[#1da1f2]/50 dark:focus:ring-[#1da1f2]/55"
+    google: "#4285F4",
+    twitter: "#1da1f2"
   }.freeze
 
-  def initialize(provider, path)
+  PATH = {
+    google: "google_oauth2",
+    twitter: "twitter"
+  }.freeze
+
+  def initialize(provider)
     super
     @provider = provider
-    @path = path
-    @icon_class = COLOR[@provider]
+    @path = Rails.application.routes.url_helpers.send("user_#{PATH[@provider]}_omniauth_authorize_path")
+    @color = COLOR[provider]
   end
 
-  def provider_formating
-    @provider.to_s.capitalize
+  def icon_class
+    "bg-[#{@color}] hover:bg-[#{@color}]/90 focus:ring-[#{@color}]/50 dark:focus:ring-[#{@color}]/55"
   end
 end
